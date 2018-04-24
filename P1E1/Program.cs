@@ -4,19 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Laboratorio1
+namespace P1E1
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ingrese la base del triangulo: ");
-            string valorPantalla = Console.ReadLine();
             decimal _base = 0m; // Declaro e inicicializo en 0 ( la m equivale a ,00 )
-            decimal _superficie = 0m; // Declaro.
-            _base = decimal.Parse(valorPantalla); // Convierto el valorpantalla a decimal
+            decimal _superficie = 0m; // Declaro
+            Console.Clear();
+            Console.WriteLine("Ingrese la base del triangulo: ");
+           
 
-            if (decimal.TryParse(valorPantalla, out _base))
+            if (decimal.TryParse(Console.ReadLine(), out _base)) // Console.ReadLine -> lee el valor que ingresa el usuario
             {
                 // operar
                 _superficie = (_base * (_base * 3)) / 2;

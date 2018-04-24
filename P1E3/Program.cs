@@ -11,11 +11,13 @@ namespace P1E3
         static void Main(string[] args)
         {
             //Declarar variables
-            Console.Write("Ingrese un numero: ");
-            string _numeroPantalla = Console.ReadLine();
             decimal _numero = 0m;
 
-            if (decimal.TryParse(_numeroPantalla, out _numero))
+            Console.Clear();
+            // Operar
+
+            Console.Write("Ingrese un numero: ");
+            if (decimal.TryParse(Console.ReadLine(), out _numero))
             {
                if (_numero == 0)
                 {

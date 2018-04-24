@@ -10,14 +10,15 @@ namespace P1E6
     {
         static void Main(string[] args)
         {
+            // Declaro variables
+            int _numero = 0;
             Console.Clear();
-            Console.WriteLine("Listado de numeros del 1 al 100");
 
-            int numeros = 0;
-
-            for (numeros = 1; numeros <= 100; numeros++)
+            // OPERAMOS
+            Console.WriteLine("Listado de numeros del 1 al 100 con su respectivo cuadrado");
+            for (_numero = 1; _numero <= 100; _numero++)
             {
-                Console.WriteLine(numeros.ToString("000")); // Convierte el valor 000 en n
+                Console.WriteLine($"{_numero} y su cuadrado es: {_numero * _numero}");  // 
             }
             Console.ReadKey();
         }

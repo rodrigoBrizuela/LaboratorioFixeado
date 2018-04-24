@@ -11,20 +11,19 @@ namespace P1E2
     {
         static void Main(string[] args)
         {
-
             // Declaro las variables
-            Console.WriteLine("Ingrese la base: "); 
-           // Declaro primero los strings que va a ingresar el usuario
-            Console.WriteLine("Ingrese la altura: "); // WriteLine para separar uno de otro
-            
             decimal _altura = 0m;
             decimal _base = 0m;
             decimal _superficie = 0m;
             decimal _perimetro = 0m;
 
-           
+            Console.Clear();
+
+            // operamos
+            Console.WriteLine("Ingrese la base: ");
             if (decimal.TryParse(Console.ReadLine(), out _base)) // Aqui se indica que al _valorbase se lo trata de convertir en decimal.
             {
+                Console.WriteLine("Ingrese la altura: "); // WriteLine para separar uno de otro
                 if (decimal.TryParse(Console.ReadLine(), out _altura))
                 {
                     _superficie = (_base * _altura); // opero primero
@@ -41,7 +40,7 @@ namespace P1E2
             {
                 Console.WriteLine("Ocurrio un error al ingresar la base");
             }
-            Console.ReadKey(); // Importante finalizar con un readkey, de esta manera el programa lee los caracteres ingresados por el usuario
+            Console.ReadKey(); // Importante finalizar con un readkey, de esta manera el programa lee los caracteres ingresados por el usuario            
         }
 
     }

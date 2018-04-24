@@ -10,10 +10,13 @@ namespace P1E7
     {
         static void Main(string[] args)
         {
+
+            // Declaro las variables
+            decimal _numero = 0m;
             Console.Clear();
 
             Console.WriteLine("Ingrese un numero: ");
-            decimal _numero = 0m;
+            
 
             if (decimal.TryParse(Console.ReadLine(), out _numero))
             {
@@ -33,7 +36,7 @@ namespace P1E7
             }
             else
             {
-                Console.WriteLine("Ingreso un caracter no valido. Por favor intente nuevamente");
+                Console.WriteLine("Ingreso un caracter no valido. Por favor ingrese un numero.");
             }
             Console.ReadKey();
         }

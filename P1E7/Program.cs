@@ -17,9 +17,9 @@ namespace P1E7
 
             if (decimal.TryParse(Console.ReadLine(), out _numero))
             {
-                if (_numero % 2 == 0)
+                if (_numero % 2 != 0)
                 {
-                    Console.WriteLine("El numero ingresado es par.");
+                    Console.WriteLine("El numero ingresado es impar.");
                 }
 
                 else if (_numero == 0)
@@ -28,7 +28,7 @@ namespace P1E7
                 }
                 else
                 {
-                    Console.WriteLine("El numero ingresado es impar.");
+                    Console.WriteLine("El numero ingresado es par.");
                 }
             }
             else

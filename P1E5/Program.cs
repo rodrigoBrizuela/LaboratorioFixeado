@@ -10,19 +10,7 @@ namespace P1E5
     {
         static void Main(string[] args)
         {
-            //Declaro variable
-            Console.Clear();
-
-            
-            int i = 0;
-
-            for (i = 1; i < 11; i++) // La sentencia FOR toma el valor i final -1
-              
-            {
-                Console.WriteLine(i.ToString("00"));
-            }
-
-            Console.ReadKey();
+            _numero 
         }
     }
 }

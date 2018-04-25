@@ -11,29 +11,39 @@ namespace P1E12
         static void Main(string[] args)
         {
             // declaramos
-            decimal _n = 0; // valor inicial
-            decimal _ingresado = 0; // valor que ingresa el usuario
+            decimal _i = 0; // valor inicial
+            decimal _num = 0; // valor que ingresa el usuario
+            bool _bandera = false;
             Console.Clear();
 
             // operamos
-            Console.WriteLine("Ingrese el numero que quiera disminuir en forma par hasta el numero 2.");
-            if(decimal.TryParse(Console.ReadLine(), out _ingresado))
+
+            while(_bandera == false)  // while se hace antes del if
             {
-                if(_ingresado % 2 == 0) // Condicion para cuando ingrese un numero impar
-                for(_n = _ingresado; _n >= 2; _n = _n - 2)
+                Console.Clear();
+                Console.WriteLine("Ingrese el numero que quiera disminuir en forma par hasta el numero 2.");
+                if (decimal.TryParse(Console.ReadLine(), out _num))
                 {
-                    Console.WriteLine(_n.ToString("0"));
+                    if (_num % 2 == 0) // Condicion para cuando ingrese un numero impar
+                    {
+                        for (_i = _num; _i >= 2; _i = _i - 2)
+                        {
+                            Console.WriteLine(_i.ToString("0"));
+                        }
+                        _bandera = true; // bandera true antes de los else
+                    }
+                    else
+                    {
+                        Console.WriteLine("Por favor ingrese un numero par");
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("Por favor ingrese un numero par");
+                    Console.WriteLine("\nHa introducido un caracter no valido. Por favor ingrese un numero par");
                 }
+                Console.ReadKey();
             }
-            else
-            {
-                Console.WriteLine("Ha introducido un caracter no valido. Por favor ingrese un numero par");
-            }
-            Console.ReadKey();
+
         }
     }
 }

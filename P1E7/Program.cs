@@ -13,35 +13,41 @@ namespace P1E7
 
             // Declaro las variables
             decimal _numero = 0m;
+            bool _bandera = false;
             Console.Clear();
 
-            Console.WriteLine("Ingrese un numero: ");
-            
+           
+
             //operamos
-
-            if (decimal.TryParse(Console.ReadLine(), out _numero))
+            while (_bandera == false) // while antes de las condiciones
             {
-                if (_numero % 2 != 0)
+                Console.Clear();
+                Console.WriteLine("Ingrese un numero: ");
+                if (decimal.TryParse(Console.ReadLine(), out _numero))
                 {
-                    Console.WriteLine("El numero ingresado es impar.");
-                }
+                    if (_numero % 2 != 0)
+                    {
+                        Console.WriteLine("El numero ingresado es impar.");
+                    }
 
-                else if (_numero == 0)
-                {
-                    Console.WriteLine("El numero ingresado es cero.");
+                    else if (_numero == 0)
+                    {
+                        Console.WriteLine("El numero ingresado es cero.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("El numero ingresado es par.");
+                    } _bandera = true;
                 }
                 else
                 {
-                    Console.WriteLine("El numero ingresado es par.");
+                    Console.WriteLine("Ingreso un caracter no valido. Por favor ingrese un numero.");
+                    Console.Write("Presione cualquier tecla para reiniciar.");
                 }
+                Console.ReadKey();
             }
-            else
-            {
-                Console.WriteLine("Ingreso un caracter no valido. Por favor ingrese un numero.");
-            }
-            Console.ReadKey();
         }
-           
     }
 }
-
+            
+ 

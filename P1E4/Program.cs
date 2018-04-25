@@ -10,21 +10,23 @@ namespace P1E4
     {
         static void Main(string[] args)
         {
-            Console.Write("Ingrese el primer numero: ");
-            string _numerouno = Console.ReadLine();
-            Console.Write("Ingrese el segundo numero: ");
-            string _numerodos = Console.ReadLine();
-            Console.Write("Ingrese el tercer numero: ");
-            string _numerotres = Console.ReadLine();
+            //Declaro
             decimal _numero1 = 0m;
             decimal _numero2 = 0m;
             decimal _numero3 = 0m;
 
-            if (decimal.TryParse(_numerouno, out _numero1))
+            Console.Clear();
+
+            // OPERO
+
+            Console.Write("Ingrese el primer numero: ");
+            if (decimal.TryParse(Console.ReadLine(), out _numero1))
             {
-                if (decimal.TryParse(_numerodos, out _numero2))
+                Console.Write("Ingrese el segundo numero: ");
+                if (decimal.TryParse(Console.ReadLine(), out _numero2))
                 {
-                    if (decimal.TryParse(_numerotres, out _numero3))
+                    Console.Write("Ingrese el tercer numero: ");
+                    if (decimal.TryParse(Console.ReadLine(), out _numero3))
                     {
                         if (_numero1 > _numero2 && _numero1 > _numero3)
                         {

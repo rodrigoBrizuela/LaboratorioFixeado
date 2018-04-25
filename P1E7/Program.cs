@@ -17,6 +17,7 @@ namespace P1E7
 
             Console.WriteLine("Ingrese un numero: ");
             
+            //operamos
 
             if (decimal.TryParse(Console.ReadLine(), out _numero))
             {

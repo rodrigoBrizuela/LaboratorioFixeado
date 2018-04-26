@@ -36,7 +36,7 @@ namespace P1E15
                             _bandera = true;
                             if (_tarifa < _pago)
                             {
-                                _vuelto = (_tarifa - _pago);
+                                _vuelto = (_pago - _tarifa);
                                 Console.WriteLine($"El monto pagado es mayor al total de venta. Su vuelto es de {_vuelto}");
                             }
                         }

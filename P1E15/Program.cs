@@ -31,17 +31,16 @@ namespace P1E15
                     {
                         if (_tarifa > _pago)
                         {
-                                _total = 100 - ((_pago * 100) / _tarifa);
-                                Console.WriteLine($"Usted obtuvo un descuento del {_total}%");
+                                _total = (100 - ((_pago * 100) / _tarifa));
+                            Console.WriteLine($"Usted obtuvo un descuento del {_total}%");
+                            _bandera = true;
+                            if (_tarifa < _pago)
+                            {
                                 _vuelto = (_tarifa - _pago);
-                                _bandera = true;
-                        }
-                        else
-                        {
-                            Console.WriteLine($"\n El monto pagado es mayor al de ventas. Su vuelto es de {_vuelto}");
+                                Console.WriteLine($"El monto pagado es mayor al total de venta. Su vuelto es de {_vuelto}");
+                            }
                         }
                     }
-
                     else
                     {
                         Console.WriteLine(" Por favor ingrese un caracter valido.\n Presione cualquier tecla para reiniciar");
@@ -50,7 +49,7 @@ namespace P1E15
 
                 else
                 {
-                    Console.WriteLine("Por favor ingrese un caracter valido. Presione cualquier tecla para reiniciar");
+                    Console.WriteLine("Por favor ingrese un caracter valido.\n Presione cualquier tecla para reiniciar");
                 }
                 Console.ReadKey();
             }

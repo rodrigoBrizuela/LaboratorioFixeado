@@ -37,7 +37,7 @@ namespace P1E7
                     else
                     {
                         Console.WriteLine("El numero ingresado es par.");
-                    } _bandera = true;
+                    } _bandera = true; // quiero que se cumplan las condiciones del while hasta aqui
                 }
                 else
                 {

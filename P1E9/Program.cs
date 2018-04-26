@@ -38,7 +38,7 @@ namespace P1E9
                 }
                 else {
                     Console.WriteLine("Por favor ingrese un numero valido.");
-                        }
+                      }
             }
           
 

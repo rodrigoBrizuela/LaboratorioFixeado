@@ -11,14 +11,14 @@ namespace P1E6
         static void Main(string[] args)
         {
             // Declaro variables
-            int _numero = 0;
+            decimal _numero = 0m;
             Console.Clear();
 
             // OPERAMOS
             Console.WriteLine("Listado de numeros del 1 al 100 con su respectivo cuadrado");
             for (_numero = 1; _numero <= 100; _numero++)
             {
-                Console.WriteLine($"{_numero} y su cuadrado es: {_numero * _numero}");  // 
+                Console.WriteLine($"{_numero} y su cuadrado es: {_numero * _numero}");  // multiplica el numero ingresado por si mismo
             }
             Console.ReadKey();
         }

@@ -14,11 +14,12 @@ namespace P1E4
             decimal _numero1 = 0m;
             decimal _numero2 = 0m;
             decimal _numero3 = 0m;
+            bool _bandera = false;
 
             Console.Clear();
 
             // OPERO
-
+            while (_bandera == false)
             Console.Write("Ingrese el primer numero: ");
             if (decimal.TryParse(Console.ReadLine(), out _numero1))
             {
@@ -30,21 +31,22 @@ namespace P1E4
                     {
                         if (_numero1 > _numero2 && _numero1 > _numero3)
                         {
-                            Console.WriteLine("El primer numero es el mayor");
+                            Console.WriteLine("El primer ingresado es el mayor");
                         }
                         {
                             if (_numero2 > _numero1 && _numero2 > _numero3)
                             {
-                                Console.WriteLine("El segundo numero es el mayor");
+                                Console.WriteLine("El segundo numero ingresado es el mayor");
                             }
                             {
                                 if (_numero3 > _numero1 && _numero3 > _numero2)
                                 {
-                                    Console.WriteLine("El tercer numero es el mayor");
+                                    Console.WriteLine("El tercer numero ingresado es el mayor");
                                 }
                             }
+                            
                         }
-                        
+                        _bandera = true;
                     }
                     else
                     {

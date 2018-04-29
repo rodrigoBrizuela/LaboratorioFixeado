@@ -39,7 +39,7 @@ namespace P1E15
                         else if (_tarifa < _pago) // condicion para el vuelto
                         {
                             _vuelto = (_pago - _tarifa);
-                            Console.WriteLine($"El monto pagado es mayor al total de venta. Su vuelto es de {_vuelto}");
+                            Console.WriteLine($"El monto pagado es mayor al total de venta. Su vuelto es de ${_vuelto}");
                         }
                     }
                     else

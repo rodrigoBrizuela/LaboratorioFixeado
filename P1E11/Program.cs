@@ -8,6 +8,11 @@ namespace P1E11
 {
     class Program
     {
+        // Tecnicatura Superior en Programacion
+        // Aybar Critto, Nicolas Exequiel
+        // Ejercicio 11
+
+
         static void Main(string[] args)
         {
             //declarar

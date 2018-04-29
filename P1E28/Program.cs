@@ -8,7 +8,7 @@ namespace P1E28
 {
     class Program
     {
-        //Tecnicatura Superior en Programacion
+        // Tecnicatura Superior en Programacion
         // Aybar Critto, Nicolas Exequiel
         // Ejercicio 28
 
@@ -48,7 +48,7 @@ namespace P1E28
                 _precioProductos = decimal.Parse(Console.ReadLine()); // Convertimos el string a decimal mediante el code decimal.Parse
                 Console.Write("Ingrese la cantidad de productos: ");
                 _cantidadProductos = int.Parse(Console.ReadLine()); // Convertimos el string a int de la cantidad de productos
-                Console.Write("Ingrese opcion de venta [1- GALVEZ , 2- OSDE, 3- SIN OBRA SOCIAL]");
+                Console.Write("Ingrese opcion de venta [1- GALVEZ , 2- OSDE, 3- SIN OBRA SOCIAL]: ");
                 _opcionDeObraSocial = int.Parse(Console.ReadLine());
                 if(_opcionDeObraSocial == 1)
                 {

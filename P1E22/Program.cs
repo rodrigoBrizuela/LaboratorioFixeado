@@ -93,34 +93,36 @@ namespace P1E22
                                     _porcentajeFinal = (_aumentoHijo * _hijos);
                                     _sueldoFinal = _aumento * _sueldoPorHijos;
                                 }
-
-                                   Console.WriteLine($"El sueldo con aumento del trabajador {_nombre} es de ${_aumento}.\nAdemas, recibe un aumento extra del {_porcentajeFinal}% por la cantidad de hijos ({_hijos}) que posee.\nEl sueldo final es de ${_sueldoFinal}");
-                                   Console.WriteLine();
-                                   Console.WriteLine("Desea calcular el sueldo de otro trabajador? [S para SI - N para NO]");
-                                   _deseaAgregar = Console.ReadLine();
-                                   Console.WriteLine("Presione cualquier tecla para finalizar...");
-                                  
+                                Console.WriteLine($"El sueldo con aumento del trabajador {_nombre} es de ${_aumento}.\nAdemas, recibe un aumento extra del {_porcentajeFinal}% por la cantidad de hijos ({_hijos}) que posee.\nEl sueldo final es de ${_sueldoFinal}");
+                                Console.WriteLine();
                             }
                             else
                             {
                                 Console.WriteLine("Por favor ingrese la cantidad de hijos expresado en numeros.");
+                                
                             }
-                            Console.ReadKey();
+                            
                         }
                         else
                         {
                             Console.WriteLine("Por favor ingrese el numero del tipo de trabajador [ 1- V | 2- G | 3- E | 4- O]");
+                            
                         }
-                        Console.ReadKey();
+                        
                     }
                 }
                 else
                 {
                     Console.WriteLine("Por favor ingrese el sueldo del trabajador expresado en numeros.");
+                    
                 }
-                Console.ReadKey();
+                Console.WriteLine();
+                Console.WriteLine("Desea calcular el sueldo de otro trabajador? [S para SI - N para NO]");
+                _deseaAgregar = Console.ReadLine();
+                Console.WriteLine("Presione cualquier tecla para finalizar...");
+
             }
-            
+            Console.ReadKey();
         }
     }
 }

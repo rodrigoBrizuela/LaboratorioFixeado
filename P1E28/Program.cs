@@ -9,6 +9,7 @@ namespace P1E28
     class Program
     {
         // Tecnicatura Superior en Programacion
+        // Comision 2
         // Aybar Critto, Nicolas Exequiel
         // Ejercicio 28
 

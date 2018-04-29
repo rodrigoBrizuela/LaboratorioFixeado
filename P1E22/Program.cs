@@ -12,7 +12,7 @@ namespace P1E22
         // Tecnicatura Superior en Programacion
         // Aybar Critto, Nicolas Exequiel
         // COMISION 2
-        // Ejercicio 19
+        // Ejercicio 22
 
         static void Main(string[] args)
         {
@@ -127,8 +127,8 @@ namespace P1E22
     }
 }
 
-    //_trabajador = int.Parse(Console.ReadLine());
-    //   
+//_trabajador = int.Parse(Console.ReadLine());
+//   
 
 //_hijos = int.Parse(Console.ReadLine());
 //                    

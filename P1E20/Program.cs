@@ -75,11 +75,6 @@ namespace P1E20
                                 _sueldo = _sueldo + _horasextras;
                                 Console.WriteLine($"El sueldo final del empleado es de ${_sueldo}. Cobro una cantidad de ${_horasextras} por horas extras.");
                             }
-                            Console.WriteLine();
-                            Console.WriteLine("Desea calcular otro salario? [S para SI - N para NO ]");
-                            _deseaAgregarOtro = Console.ReadLine();
-                          
-
                         }
                         else
                         {
@@ -96,8 +91,14 @@ namespace P1E20
                 {
                     Console.WriteLine("Ocurrio un error. Por favor ingrese el sueldo del trabajador");
                 }
-                Console.ReadKey(); // Antes de cerrar el while
+                Console.WriteLine();
+                Console.WriteLine("Desea calcular otro salario? [S para SI - N para NO ]");
+                _deseaAgregarOtro = Console.ReadLine();
+                Console.WriteLine("Presione cualquier tecla para finalizar...");
+
+                
             }
+            Console.ReadKey();
         }
     }
 }

@@ -27,7 +27,7 @@ namespace P1E27
             while(_deseaAgregarOtro.ToUpper() == "S")
             {
                 Console.Clear();
-                Console.WriteLine("Ingrese el total de ventas: ");
+                Console.WriteLine("Ingrese el total vendido: ");
                 if(decimal.TryParse(Console.ReadLine(), out _ventas))
                 {
                     Console.WriteLine("Ingrese el total de gastos: ");
@@ -38,7 +38,15 @@ namespace P1E27
                         Console.WriteLine($"La ganancia del comerciante con deduccion de impuestos y de gastos es de ${_ganancia}");
 
                     }
+                    else
+                    {
+                        Console.WriteLine("Ocurrio un eror al ingresar los gastos. Por favor intente nuevamente.");
+                    }
 
+                }
+                else
+                {
+                    Console.WriteLine("Ocurrio un error al ingresar las ventas. Por favor intente nuevamente.");
                 }
                 Console.WriteLine();
                 Console.WriteLine("Desea calcular otra ganancia mensual? [S para SI - N para NO]");

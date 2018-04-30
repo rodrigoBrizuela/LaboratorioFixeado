@@ -15,16 +15,8 @@ namespace P1E25
 
         static void Main(string[] args)
         {
-            //Deportes
-
-            decimal _natacion = 0m;
-            decimal _tenis = 0m;
-            decimal _golf = 0m;
-            decimal _esqui = 0m;
-            decimal _otros = 0m;
 
             //Clima
-            decimal _clima = 0m;
             decimal _celsius = 0m;
             decimal _farenheit = 0m;
 
@@ -35,10 +27,10 @@ namespace P1E25
             while(_deseaCalcularOtro.ToUpper() == "S")
             {
                 Console.Clear();
-                Console.WriteLine("Ingrese la cantidad de grados Celcius que desea convertir a Farenheit: ");
+                Console.WriteLine("Ingrese la cantidad de grados Celsius que desea convertir a Farenheit: ");
                 if(decimal.TryParse(Console.ReadLine(), out _celsius))
                 {
-                    _farenheit = ((9/ 5) * _celsius) + 32;
+                    _farenheit = _celsius * 9 / 5 + 32; // Formula para pasar de Celsius a Farenheit
 
                    if (_farenheit <= 32)
                    {
@@ -72,7 +64,6 @@ namespace P1E25
                 Console.WriteLine("Presione cualquier tecla para finalizar...");
             }
             Console.ReadKey();
-
         }
     }
 }

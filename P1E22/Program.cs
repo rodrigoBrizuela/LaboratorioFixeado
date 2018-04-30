@@ -126,24 +126,3 @@ namespace P1E22
         }
     }
 }
-
-//_trabajador = int.Parse(Console.ReadLine());
-//   
-
-//_hijos = int.Parse(Console.ReadLine());
-//                    
-//                    else
-//                    {
-//                        Console.WriteLine("Ocurrio un error. Por favor introduzca un caracter valido");
-//                    }
-//                    Console.WriteLine($"El sueldo con aumento del trabajador {_nombre} es de ${_aumento}.\nAdemas, recibe un aumento extra del {_porcentajeFinal}% por la cantidad de hijos ({_hijos}) que posee.\nEl sueldo final es de ${_sueldoFinal}");
-//
-//                    Console.WriteLine();
-//                    Console.WriteLine("Desea calcular el sueldo de otro trabajador? [S para SI - N para NO]");
-//                    _deseaAgregar = Console.ReadLine();
-//                    Console.WriteLine("Presione cualquier tecla para finalizar...");
-//
-//                }
-//                else
-//                {
-//                    Console.WriteLine("Ocurrio un error. Por favor introduzca un caracter valido");

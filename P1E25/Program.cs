@@ -38,14 +38,40 @@ namespace P1E25
                 Console.WriteLine("Ingrese la cantidad de grados Celcius que desea convertir a Farenheit: ");
                 if(decimal.TryParse(Console.ReadLine(), out _celsius))
                 {
-                    _farenheit = (9 / 5 * _celsius) + 32;
-                   if (_farenheit <= 32)
-                    {
-                        Console.WriteLine($"La temperatura {_farenheit} esta ideal para practicar deportes distintos al Esqui, Golf, Tenis y Natacion.");
-                    }
-                }
-            }
+                    _farenheit = ((9/ 5) * _celsius) + 32;
 
+                   if (_farenheit <= 32)
+                   {
+                        Console.WriteLine($"La cantidad de grados {_celsius} Celsius equivale a {_farenheit} Farenheit. Esta ideal para practicar otros deportes distintos al Esqui, Golf, Tenis y Natacion.");
+                   }
+                   else if (_farenheit > 32 && _farenheit <= 35)
+                   {
+                        Console.WriteLine($"La cantidad de grados {_celsius} Celsius equivale a {_farenheit} Farenheit. Esta ideal para practicar Esqui.");
+                   }
+                   else if (_farenheit > 35 && _farenheit <= 70)
+                   {
+                        Console.WriteLine($"La cantidad de grados {_celsius} Celsius equivale a {_farenheit} Farenheit. Esta ideal para practicar Golf.");
+                   }
+                   else if (_farenheit > 70 && _farenheit <= 85)
+                   {
+                        Console.WriteLine($"La cantidad de grados {_celsius} Celsius equivale a {_farenheit} Farenheit. Esta ideal para practicar Tenis.");
+                   }
+                   else if (_farenheit > 85)
+                   {
+                        Console.WriteLine($"La cantidad de grados {_celsius} Celsius equivale a {_farenheit} Farenheit. Esta ideal para practicar Natacion.");
+                   }
+                   
+                }
+                else
+                {
+                    Console.WriteLine("Ocurrio un error al convertir la temperatura. Por favor ingrese un caracter valido");
+                }
+                Console.WriteLine();
+                Console.WriteLine("Desea convertir otra temperatura? [S para SI - N para NO]");
+                _deseaCalcularOtro = Console.ReadLine();
+                Console.WriteLine("Presione cualquier tecla para finalizar...");
+            }
+            Console.ReadKey();
 
         }
     }

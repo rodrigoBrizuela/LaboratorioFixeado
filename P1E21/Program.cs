@@ -34,13 +34,10 @@ namespace P1E21
                     if (_pesoPescado > _mayor2)
                     {
                         _mayor2 = _pesoPescado;
-                        if (_pesoPescado > _mayor && _pesoPescado < _mayor2)
+                        if (_pesoPescado < _mayor2)
                         {
                             _mayor = _pesoPescado;
-                            _mayor2 = _pesoPescado;
-
-
-                            
+            
                         }
                     }       
 

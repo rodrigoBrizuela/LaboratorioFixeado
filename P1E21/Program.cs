@@ -19,7 +19,6 @@ namespace P1E21
             decimal _pesoPescado = 0m;
             decimal _mayor = 0m;
             decimal _mayor2 = 0m;
-            decimal _menor = 0m;
 
             // condicion while
             string _deseaIngresarPescado = "S"; 
@@ -34,14 +33,14 @@ namespace P1E21
                     if (_pesoPescado > _mayor2)
                     {
                         _mayor2 = _pesoPescado;
-                        if (_pesoPescado < _mayor2)
-                        {
+
+
+                    }
+                    else if (_pesoPescado > _mayor && _pesoPescado < _mayor2)
+                    {                       
                             _mayor = _pesoPescado;
-
-
-                            
-                        }
-                    }       
+                      
+                    }
 
                 } Console.WriteLine();
                 Console.WriteLine("Desea agregar mas pescados? [S para SI - N para NO]");

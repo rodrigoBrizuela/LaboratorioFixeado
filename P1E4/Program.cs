@@ -16,53 +16,62 @@ namespace P1E4
             decimal _numero3 = 0m;
             bool _bandera = false;
 
-            Console.Clear();
+            // Declararacion para el while
+            string _deseaAgregar = "S";
 
             // OPERO
-            while (_bandera == false)
-            Console.Write("Ingrese el primer numero: ");
-            if (decimal.TryParse(Console.ReadLine(), out _numero1))
+            Console.Clear();
+            while (_deseaAgregar.ToUpper() == "S")
             {
-                Console.Write("Ingrese el segundo numero: ");
-                if (decimal.TryParse(Console.ReadLine(), out _numero2))
+                Console.Clear();
+                Console.Write("Ingrese el primer numero: ");
+                if (decimal.TryParse(Console.ReadLine(), out _numero1))
                 {
-                    Console.Write("Ingrese el tercer numero: ");
-                    if (decimal.TryParse(Console.ReadLine(), out _numero3))
+                    Console.Write("Ingrese el segundo numero: ");
+                    if (decimal.TryParse(Console.ReadLine(), out _numero2))
                     {
-                        if (_numero1 > _numero2 && _numero1 > _numero3)
+                        Console.Write("Ingrese el tercer numero: ");
+                        if (decimal.TryParse(Console.ReadLine(), out _numero3))
                         {
-                            Console.WriteLine("El primer ingresado es el mayor");
-                        }
-                        {
-                            if (_numero2 > _numero1 && _numero2 > _numero3)
+                            if (_numero1 > _numero2 && _numero1 > _numero3)
                             {
-                                Console.WriteLine("El segundo numero ingresado es el mayor");
+                                Console.WriteLine("El primer ingresado es el mayor");
                             }
                             {
-                                if (_numero3 > _numero1 && _numero3 > _numero2)
+                                if (_numero2 > _numero1 && _numero2 > _numero3)
                                 {
-                                    Console.WriteLine("El tercer numero ingresado es el mayor");
+                                    Console.WriteLine("El segundo numero ingresado es el mayor");
                                 }
+                                {
+                                    if (_numero3 > _numero1 && _numero3 > _numero2)
+                                    {
+                                        Console.WriteLine("El tercer numero ingresado es el mayor");
+                                    }
+                                }
+
                             }
-                            
+
                         }
-                        _bandera = true;
+                        else
+                        {
+                            Console.WriteLine("Ocurrio un error al ingresar el tercer numero");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("Ocurrio un error al ingresar el tercer numero");
+                        Console.WriteLine("Ocurrio un error al ingresar el segundo numero");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Ocurrio un error al ingresar el segundo numero");
+                    Console.WriteLine("Ocurrio un error al ingresar el primer numero");
                 }
-            }
-            else
-            {
-                Console.WriteLine("Ocurrio un error al ingresar el primer numero");
+                Console.WriteLine();
+                Console.WriteLine("Desea intentar nuevamente? [S para SI - N para no]");
+                _deseaAgregar = Console.ReadLine();
             }
             Console.ReadKey();
         }
+        
     }
 }

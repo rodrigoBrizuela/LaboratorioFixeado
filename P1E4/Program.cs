@@ -14,7 +14,6 @@ namespace P1E4
             decimal _numero1 = 0m;
             decimal _numero2 = 0m;
             decimal _numero3 = 0m;
-            bool _bandera = false;
 
             // Declararacion para el while
             string _deseaAgregar = "S";

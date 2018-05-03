@@ -44,13 +44,19 @@ namespace P1E21
 
                        }
                     }
-                    else if (_pesoPescado > _mayor && _pesoPescado < _mayor2)
+                    else if (_pesoPescado > _mayor && 
+
                     {                       
                             _mayor = _pesoPescado;
                       
                     }
 
-                } Console.WriteLine();
+                }
+                else
+                {
+                    Console.WriteLine("Ocurrio un error al ingresar el peso del pescado. Por favor ingrese el peso en caracteres numericos.");
+                }
+                Console.WriteLine();
                 Console.WriteLine("Desea agregar mas pescados? [S para SI - N para NO]");
                 _deseaIngresarPescado = Console.ReadLine();
                 

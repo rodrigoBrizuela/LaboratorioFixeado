@@ -8,6 +8,12 @@ namespace P1E4
 {
     class Program
     {
+
+        // Tecnicatura Superior en Programacion
+        // Comision 2
+        // Aybar Critto, Nicolas Exequiel
+        // Ejercicio 4
+
         static void Main(string[] args)
         {
             //Declaro
@@ -19,7 +25,6 @@ namespace P1E4
             string _deseaAgregar = "S";
 
             // OPERO
-            Console.Clear();
             while (_deseaAgregar.ToUpper() == "S")
             {
                 Console.Clear();
@@ -34,18 +39,19 @@ namespace P1E4
                         {
                             if (_numero1 > _numero2 && _numero1 > _numero3)
                             {
-                                Console.WriteLine("El primer ingresado es el mayor");
+                                Console.WriteLine($"El primer ingresado es el mayor ({_numero1})");
                             }
                             {
                                 if (_numero2 > _numero1 && _numero2 > _numero3)
                                 {
-                                    Console.WriteLine("El segundo numero ingresado es el mayor");
+                                    Console.WriteLine($"El segundo numero ingresado es el mayor ({_numero2})");
                                 }
                                 {
                                     if (_numero3 > _numero1 && _numero3 > _numero2)
                                     {
-                                        Console.WriteLine("El tercer numero ingresado es el mayor");
+                                        Console.WriteLine($"El tercer numero ingresado es el mayor ({_numero3})");
                                     }
+                                    
                                 }
 
                             }

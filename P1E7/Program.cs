@@ -8,18 +8,24 @@ namespace P1E7
 {
     class Program
     {
+        // Tecnicatura Superior en Programacion
+        // Comision 2
+        // Aybar Critto, Nicolas Exequiel
+        // Ejercicio 7
+
         static void Main(string[] args)
         {
 
             // Declaro las variables
             decimal _numero = 0m;
-            bool _bandera = false;
-            Console.Clear();
 
-           
+            //Variable while
+            string _deseaCalcular = "S";
+
+
 
             //operamos
-            while (_bandera == false) // while antes de las condiciones
+            while (_deseaCalcular.ToUpper() == "S") // while antes de las condiciones
             {
                 Console.Clear();
                 Console.WriteLine("Ingrese un numero: ");
@@ -32,21 +38,27 @@ namespace P1E7
 
                     else if (_numero == 0)
                     {
-                        Console.WriteLine("El numero ingresado es cero.");
+                        Console.WriteLine("El numero ingresado es neutro.");
                     }
                     else
                     {
                         Console.WriteLine("El numero ingresado es par.");
-                    } _bandera = true; // quiero que se cumplan las condiciones del while hasta aqui
+                    }
                 }
                 else
                 {
                     Console.WriteLine("Ingreso un caracter no valido. Por favor ingrese un numero.");
-                    Console.Write("Presione cualquier tecla para reiniciar.");
+
                 }
-                Console.ReadKey();
+                Console.WriteLine();
+                Console.WriteLine("Desea calcular otro numero? [S para SI - N para NO]");
+                _deseaCalcular = Console.ReadLine();
+                Console.WriteLine("Presione cualquier tecla para finalizar...");
+
             }
+            Console.ReadKey();
         }
+
     }
 }
             

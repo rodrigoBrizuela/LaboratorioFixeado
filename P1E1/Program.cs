@@ -32,6 +32,10 @@ namespace P1E1
                     _resultado = _base * (_base * 3) / 2;
                     Console.WriteLine($"La superficie del rectangulo cuya base es el triple de su altura es: {_resultado}");
                 }
+                else
+                {
+                    Console.WriteLine("Ocurrio un error al ingresar la base. Por favor ingrese la base con caracteres numericos");
+                }
                 Console.WriteLine();
                 Console.WriteLine("Desea calcular otra superficie? [S para SI - N para NO]");
                 _deseaCalcular = Console.ReadLine();

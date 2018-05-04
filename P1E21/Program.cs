@@ -44,8 +44,7 @@ namespace P1E21
 
                        }
                     }
-                    else if (_pesoPescado > _mayor && 
-
+                    else if (_pesoPescado > _mayor && _pesoPescado < _mayor2)
                     {                       
                             _mayor = _pesoPescado;
                       

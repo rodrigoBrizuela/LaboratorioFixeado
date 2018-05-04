@@ -30,7 +30,7 @@ namespace P1E25
                 Console.WriteLine("Ingrese la cantidad de grados Celsius que desea convertir a Farenheit: ");
                 if(decimal.TryParse(Console.ReadLine(), out _celsius))
                 {
-                    _farenheit = _celsius * 9 / 5 + 32; // Formula para pasar de Celsius a Farenheit
+                    _farenheit = _celsius * (9m / 5m) + 32; // Formula para pasar de Celsius a Farenheit. // Agregar m a la formula division para convertir a decimal
 
                    if (_farenheit <= 32)
                    {

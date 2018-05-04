@@ -15,12 +15,11 @@ namespace P1E15
             decimal _pago = 0m;
             decimal _total = 0m;
             decimal _vuelto = 0m;
-            bool _bandera = false; // centinela
 
-
-            
+            string _deseaAgregar = "S";
+       
             // operamos
-            while (_bandera == false)
+            while (_deseaAgregar.ToUpper() == "S")
 
             {
                 Console.Clear(); // console clear va dentro del while 
@@ -34,7 +33,7 @@ namespace P1E15
                         {
                             _total = (100 - ((_pago * 100) / _tarifa));
                             Console.WriteLine($"Usted obtuvo un descuento del {_total}%");
-                            _bandera = true;
+                            
                         }
                         else if (_tarifa < _pago) // condicion para el vuelto
                         {
@@ -51,8 +50,12 @@ namespace P1E15
                 {
                     Console.WriteLine("Por favor ingrese un caracter valido.\nPresione cualquier tecla para reiniciar.");
                 }
-                Console.ReadKey();
+                Console.WriteLine();
+                Console.WriteLine("Desea realizar otra venta? [S para Si - N para NO]");
+                _deseaAgregar = Console.ReadLine();
             }
+            Console.ReadKey();
         }
+        
     }
 }

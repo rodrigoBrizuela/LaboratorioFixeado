@@ -8,6 +8,11 @@ namespace P1E5
 {
     class Program
     {
+        // Tecnicatura Superior en Programacion
+        // Comision 2
+        // Aybar Critto, Nicolas Exequiel
+        // Ejercicio 5
+
         static void Main(string[] args)
         {
             //Declaro variable

@@ -18,11 +18,8 @@ namespace P1E16
             // DECLARAR OPERACIONES
             int _num1 = 0;
             int _num2 = 0;
-            int _suma = 0;
-            int _resta = 0;
             int _division1 = 0;
             int _division2 = 0;
-            int _multiplicacion = 0;
             int _resto1 = 0;
             int _resto2 = 0;
 
@@ -40,32 +37,25 @@ namespace P1E16
                     Console.WriteLine("Ingrese el segundo numero: ");
                     if (int.TryParse(Console.ReadLine(), out _num2))
                     {
-                        _suma = (_num1 + _num2);
-                        Console.WriteLine($"La suma de los dos numeros ingresados es: {_suma}");
-                        _resta = (_num1 - _num2);
-                        Console.WriteLine($"La resta de los dos numeros ingresados es: {_resta}");
-                        _multiplicacion = (_num1 * _num2);
-                        Console.WriteLine($"La multiplicacion de los dos numeros ingresados es: {_multiplicacion}");
-                        _resta = (_num2 - _num1);
-                        Console.WriteLine($"La resta de los dos numeros ingresados, con sus operadores invertidos, es: {_resta}");
+
+                        Console.WriteLine($"La suma de los dos numeros ingresados es: {_num1 + _num2}");
+                        Console.WriteLine($"La resta de los dos numeros ingresados es: {_num1 - _num2}");
+                        Console.WriteLine($"La multiplicacion de los dos numeros ingresados es: {_num1 * _num2}");
+                        Console.WriteLine($"La resta de los dos numeros ingresados, con sus operadores invertidos, es: {_num2 - _num1}");
                         try // Try catch para resolver al division en 0
                         {
-                            _division1 = (_num1 / _num2);
-                            _resto1 = (_num1 % _num2);
-                            Console.WriteLine($"La division de ambos numeros es: {_division1}, y su resto es {_resto1}");
+                            Console.WriteLine($"La division de ambos numeros es: {_num1 / _num2}, y su resto es {_num1 % _num2}");
                         }
                         catch (DivideByZeroException) // En caso de que ingrese 0, muestra el mensaje de abajo.
                         {
                             Console.WriteLine("No se puede realizar la division en cero.");
                         }
-                        try
+                        try// Try catch para resolver al division en 0 conmutativa
                         {
-                            _division2 = (_num2 / _num1);
-                            _resto2 = (_num2 % _num1);
-                            Console.WriteLine($"La division conmutativa es igual a: {_division2}, y su resto es {_resto2}");
+                            Console.WriteLine($"La division conmutativa es igual a: {_num2 / _num1}, y su resto es {_num2 % _num1}");
                         }
                       
-                        catch (DivideByZeroException)
+                        catch (DivideByZeroException) // En caso de que ingrese 0, muestra el mensaje de abajo.
                         {
                             Console.WriteLine("La division conmutativa no se puede realizar ya que no se puede dividir en cero.");
                         }

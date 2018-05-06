@@ -69,7 +69,7 @@ namespace P1E24
                 Console.WriteLine();
                 Console.WriteLine("Desea calcular otra superficie? [S para SI - N para NO]");
                 _deseaCalcular = Console.ReadLine();
-
+                Console.WriteLine("Presione cualquier tecla para finalizar...");
             }
             Console.ReadKey();
         }

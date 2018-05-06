@@ -36,9 +36,10 @@ namespace P1E9
 
                     
                 }
-                else {
+                else
+                {
                     Console.WriteLine("Ocurrio un error. Por favor ingrese un numero valido.");
-                     }
+                }
 
                 Console.WriteLine($"\nEl resultado de {_base} elevado a la {_exponente} es {_resultado}.");
                 Console.WriteLine();

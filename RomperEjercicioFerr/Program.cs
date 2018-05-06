@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P1E16
+namespace P1E20
 {
     class Program
     {
@@ -15,44 +15,63 @@ namespace P1E16
              * Comision 2
              * D.N.I 42.269.771
              * Adad, Fernando Yamil
-             * Ejercicio 16
+             * Ejercicio 20
              */
 
-            int _num1 = 0;
-            int _num2 = 0;
+            int _sueldoExtra = 0;
+            int _horasExtra = 0;
+            decimal _sueldo = 0;
+            int _categoria = 0;
+
             bool _finPrograma = false;
 
+
+            _finPrograma = false;
             while (_finPrograma == false)
             {
                 Console.Clear();
-                Console.Write("No ingrese 0.\nIngrese un numero entero: ");
-                if (int.TryParse(Console.ReadLine(), out _num1) && _num1 != 0)
+                Console.WriteLine("Ingrese los siguientes datos a continuacion:\n");
+                Console.Write("Horas extra trabajadas: ");
+                if (int.TryParse(Console.ReadLine(), out _horasExtra))
                 {
-                    Console.Write("Ingrese otro numero entero: ");
-
-                    if (int.TryParse(Console.ReadLine(), out _num2) && _num2 != 0)
+                    Console.Write("Sueldo base: ");
+                    if (decimal.TryParse(Console.ReadLine(), out _sueldo))
                     {
-                        Console.Clear();
-                        Console.WriteLine("Operaciones entre los numeros ingresados: ");
-                        Console.WriteLine($"{_num1} y {_num2}\n");
+                        Console.Write("Categoria de empleado (1|2):  ");
+                        if (int.TryParse(Console.ReadLine(), out _categoria) && (_categoria > 0 && _categoria < 3))
+                        {
+                            if (_categoria == 1)
+                            {
+                                if (_horasExtra <= 30)
+                                { _sueldoExtra = _horasExtra * 10; }
+                                else
+                                { _sueldoExtra = _horasExtra * 11; }
+                            }
+                            else
+                            {
+                                if (_horasExtra <= 30)
+                                { _sueldoExtra = _horasExtra * 14; }
+                                else
+                                { _sueldoExtra = _horasExtra * 20; }
+                            }
 
-                        Console.WriteLine($"Suma: {_num1 + _num2}" +
-                            $"\nResta1({_num1} - {_num2}): {_num1 - _num2}\nResta2({_num2} - {_num1}): {_num2 - _num1}" +
-                            $"\nMultiplicacion: {_num1 * _num2}" +
-                            $"\nDivision1({_num1} / {_num2}): {_num1 / _num2}\nDivision2({_num2} / {_num1}): {_num2 / _num1}" +
-                            $"\nModulo1({_num1} % {_num2}): {_num1 % _num2}\nModulo2({_num2} % {_num1}): {_num2 % _num1}");
+                            Console.Write($"\nImporte por horas extra: {_sueldoExtra}\nCobrará este mes: ${_sueldo + _sueldoExtra}");
 
-                        _finPrograma = true;
-
+                            _finPrograma = true;
+                        }
+                        else
+                        {
+                            Console.Write("Ingresó un valor incorrecto, presione cualquier tecla para ingresar");
+                        }
                     }
                     else
                     {
-                        Console.Write("Ingresó un valor incorrecto, presione cualquier tecla para reiniciar.");
+                        Console.Write("Ingresó un valor incorrecto, presione cualquier tecla para ingresar");
                     }
                 }
                 else
                 {
-                    Console.Write("Ingresó un valor incorrecto, presione cualquier tecla para reiniciar.");
+                    Console.Write("Ingresó un valor incorrecto, presione cualquier tecla para ingresar");
                 }
 
                 Console.ReadKey();

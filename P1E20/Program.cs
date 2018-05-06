@@ -9,8 +9,8 @@ namespace P1E20
     class Program
     {
         // Tecnicatura Superior en Programacion
-        // Comision 2
         // Aybar Critto, Nicolas Exequiel
+        // COMISION 2
         // Ejercicio 20
 
         static void Main(string[] args)
@@ -45,58 +45,59 @@ namespace P1E20
                     Console.WriteLine("Ingrese la cantidad de horas extras trabajadas: ");
                     if (decimal.TryParse(Console.ReadLine(), out _horas))
                     {
-                        Console.WriteLine("Ingrese el tipo de trabajador [ 1 - Categoria 1 | 2- Categoria 2 | 3- Categoria 1 (+30hs) | 4- Categoria 2 (+30hs) ]");
+                        Console.WriteLine("Ingrese el tipo de trabajador [ 1 - Categoria 1 | 2- Categoria 2 ]");
                         if (int.TryParse(Console.ReadLine(), out _tipoEmpleado))
                         {
-                            if (_tipoEmpleado == 1 && _horas <= 30) // EMPLEADO CATEGORIA 1
+                            if (_tipoEmpleado == 1) // EMPLEADO CATEGORIA 1
                             {
-                                _horasextras = _horas * _categoria1;
-                                _sueldo = _sueldo + _horasextras;
-                                Console.WriteLine($"El sueldo final del empleado es de ${_sueldo}. Cobro una cantidad de ${_horasextras} por horas extras.");
+                                if (_horas <= 30)
+                                {
+                                    _horasextras = _horas * _categoria1;
+                                    _sueldo = _sueldo + _horasextras;
+                                    Console.WriteLine($"El sueldo final del empleado es de ${_sueldo}. Cobro una cantidad de ${_horasextras} por horas extras.");
+                                }
+                                else
+                                {
+                                    _horasextras = (30 * _categoria1) + (_horas - 30) * _categoria1pro;
+                                    _sueldo = _sueldo + _horasextras;
+                                    Console.WriteLine($"El sueldo final del empleado es de ${_sueldo}. Cobro una cantidad de ${_horasextras} por horas extras.");
+                                }
                             }
-                            else if (_tipoEmpleado == 2 && _horas <= 30) // EMPLEADO CATEGORIA 2
+                            else if (_tipoEmpleado == 2) // EMPLEADO CATEGORIA 2
                             {
-
-                                _horasextras = _horas * _categoria2;
-                                _sueldo = _sueldo + _horasextras;
-                                Console.WriteLine($"El sueldo final del empleado es de ${_sueldo}. Cobro una cantidad de ${_horasextras} por horas extras.");
-                            }
-                            else if (_tipoEmpleado == 3 && _horas > 30) // EMPLEADO CATEGORIA 1 PRO
-                            {
-
-                                _horasextras = _horas * _categoria1pro;
-                                _sueldo = _sueldo + _horasextras;
-                                Console.WriteLine($"El sueldo final del empleado es de ${_sueldo}. Cobro una cantidad de ${_horasextras} por horas extras.");
-
-                            }
-                            else if (_tipoEmpleado == 4 && _horas > 30) // EMPLEADO CATEGORIA 2 PRO
-                            {
-                                _horasextras = _horas * _categoria2pro;
-                                _sueldo = _sueldo + _horasextras;
-                                Console.WriteLine($"El sueldo final del empleado es de ${_sueldo}. Cobro una cantidad de ${_horasextras} por horas extras.");
+                                if(_horas <= 30)
+                                {
+                                    _horasextras = _horas * _categoria2;
+                                    _sueldo = _sueldo + _horasextras;
+                                    Console.WriteLine($"El sueldo final del empleado es de ${_sueldo}. Cobro una cantidad de ${_horasextras} por horas extras.");
+                                }
+                                else
+                                {
+                                    _horasextras = (30 * _categoria2) + (_horas - 30) * _categoria2pro;
+                                    _sueldo = _sueldo + _horasextras;
+                                    Console.WriteLine($"El sueldo final del empleado es de ${_sueldo}. Cobro una cantidad de ${_horasextras} por horas extras.");
+                                }
                             }
                         }
                         else
                         {
-                            Console.WriteLine("Por favor ingrese la categoria del trabajador [ 1 - Categoria 1 | 2- Categoria 2 | 3- Categoria 1 (+30hs) | 4- Categoria 2 (+30hs) ]");
+                            Console.WriteLine("Por favor ingrese la categoria del trabajador [ 1 - Categoria 1 | 2- Categoria 2 ]");
                         }
-                       
                     }
                     else
                     {
                         Console.WriteLine("Ocurrio un error. Por favor ingrese la cantidad de horas trabajadas");
                     }
+
                 }
                 else
                 {
                     Console.WriteLine("Ocurrio un error. Por favor ingrese el sueldo del trabajador");
                 }
                 Console.WriteLine();
-                Console.WriteLine("Desea calcular otro salario? [S para SI - N para NO ]");
+                Console.WriteLine("Desea calcular otro sueldo? [S para SI - N para NO]");
                 _deseaAgregarOtro = Console.ReadLine();
                 Console.WriteLine("Presione cualquier tecla para finalizar...");
-
-                
             }
             Console.ReadKey();
         }

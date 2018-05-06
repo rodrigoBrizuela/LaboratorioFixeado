@@ -22,7 +22,7 @@ namespace P1E12
             string _deseaCalcular = "S";
             
 
-            // operamos
+            // OPERAMOS
 
             while(_deseaCalcular.ToUpper() == "S")  // while se hace antes del if
             {

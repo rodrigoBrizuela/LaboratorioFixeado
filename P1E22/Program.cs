@@ -38,7 +38,7 @@ namespace P1E22
             //cantidad de hijos que tiene + aumento por hijo
             int _hijos = 0;
             decimal _sueldoPorHijos = 0m;
-            decimal _aumentoHijo = 5m; // aumento del 5% por hijo
+            decimal _aumentoHijo = 5m; // aumento del 5% por hijo / prima
             decimal _porcentajeFinal = 0m; // porcentaje de aumento final por hijos
             // Condicion while
             string _deseaAgregar = "S";
@@ -67,7 +67,7 @@ namespace P1E22
                                     _aumento = _sueldo * _tipoV;
                                     _sueldoPorHijos = ((_aumentoHijo * _hijos) / 100) + 1;
                                     _porcentajeFinal = (_aumentoHijo * _hijos);
-                                    _sueldoFinal = _aumento * _sueldoPorHijos;
+                                    _sueldoFinal= _aumento * _sueldoPorHijos;
 
                                 }
                                 else if (_trabajador == 2) // TIPO G
@@ -93,8 +93,9 @@ namespace P1E22
                                     _porcentajeFinal = (_aumentoHijo * _hijos);
                                     _sueldoFinal = _aumento * _sueldoPorHijos;
                                 }
-                                Console.WriteLine($"El sueldo con aumento del trabajador {_nombre} es de ${_aumento}.\nAdemas, recibe un aumento extra del {_porcentajeFinal}% por la cantidad de hijos ({_hijos}) que posee.\nEl sueldo final es de ${_sueldoFinal}");
                                 Console.WriteLine();
+                                Console.WriteLine($"El sueldo con aumento del trabajador {_nombre} es de ${_aumento}.\nAdemas, recibe un aumento extra del {_porcentajeFinal}% por la cantidad de hijos ({_hijos}) que posee.\nEl sueldo final es de ${decimal.Round(_sueldoFinal, 2)}");
+                              
                             }
                             else
                             {

@@ -30,24 +30,23 @@ namespace P1E21
                 Console.WriteLine("Ingrese el peso del pescado:");
                 if(decimal.TryParse(Console.ReadLine(), out _pesoPescado))
                 {
-                    if (_pesoPescado > _mayor2)
+                    if (_pesoPescado > _mayor2) // Peso pescado > 0
                     {
 
-                        if(_mayor2 > _mayor)
+                        if(_mayor2 > _mayor) // No se da al principio porque 0 no es > 0
                         {
                             _mayor = _mayor2; 
                             _mayor2 = _pesoPescado;
                         }
-                       else
-                       {
-                            _mayor2 = _pesoPescado; 
+                        else
+                        {
+                            _mayor2 = _pesoPescado; // Entonces a mayor se le asigna el peso pescado.
 
-                       }
+                        }
                     }
                     else if (_pesoPescado > _mayor && _pesoPescado < _mayor2)
-                    {                       
-                            _mayor = _pesoPescado;
-                      
+                    {
+                        _mayor = _pesoPescado;
                     }
 
                 }

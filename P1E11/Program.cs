@@ -24,7 +24,7 @@ namespace P1E11
             //declaracion while
             string _deseaCalcular = "S";
 
-     
+            // OPERAR
 
             while (_deseaCalcular.ToUpper() == "S")
             {

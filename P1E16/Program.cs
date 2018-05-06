@@ -18,10 +18,6 @@ namespace P1E16
             // DECLARAR OPERACIONES
             int _num1 = 0;
             int _num2 = 0;
-            int _division1 = 0;
-            int _division2 = 0;
-            int _resto1 = 0;
-            int _resto2 = 0;
 
             //Declaracion while
             string _deseaCalcular = "S";

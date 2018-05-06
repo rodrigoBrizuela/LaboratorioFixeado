@@ -40,7 +40,7 @@ namespace P1E19
                 }
                 else
                 {
-                    Console.WriteLine("Por favor ingrese la cantidad de segundos que desea convertir.");
+                    Console.WriteLine("Ocurrio un error. Por favor ingrese la cantidad de segundos que desea convertir.");
                 }
                 Console.WriteLine();
                 Console.WriteLine("Desea calcular otra operacion? [S para SI - N para NO]: ");

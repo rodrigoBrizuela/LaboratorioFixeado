@@ -10,6 +10,7 @@ namespace P1E18
     {
         // Tecnicatura Superior en Programacion
         // Aybar Critto, Nicolas Exequiel
+        // COMISION 2
         // Ejercicio 18
 
         static void Main(string[] args)
@@ -24,7 +25,7 @@ namespace P1E18
             
             while (_deseaIngresarNum.ToUpper() == "S")
             {
-                Console.Clear(); // borrar consola == primera linea del while
+                Console.Clear(); // borrar consola {} primera linea del while
                 Console.WriteLine("Ingrese la cantidad de centimetros que desee convertir a pulgadas");
                 if (decimal.TryParse(Console.ReadLine(), out _centimetros))
                 {

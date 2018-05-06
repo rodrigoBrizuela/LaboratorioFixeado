@@ -27,8 +27,6 @@ namespace P1E26
             string _deseaCalcular = "S";
 
 
-
-
             // Operamos
 
             while(_deseaCalcular.ToUpper() == "S")
@@ -45,12 +43,13 @@ namespace P1E26
                     {
                         _sueldo = (40 * _pagohs) + ((_horas - 40) * _pagohsextras);                       
                     }
+                    Console.WriteLine($"El obrero trabajo {_horas} horas, por lo cual le corresponde un salario semanal de {_sueldo}");
                 }
                 else
                 {
                     Console.WriteLine("Ocurrio un error al ingresar las horas trabajadas. Por porfavor utilice caracteres numericos.");
                 }
-                Console.WriteLine($"El obrero trabajo {_horas} horas, por lo cual le corresponde un salario semanal de {_sueldo}");
+                
                 Console.WriteLine();
                 Console.WriteLine("Desea calcular otro salario semanal? [S para SI - N para NO]");
                 _deseaCalcular = Console.ReadLine();

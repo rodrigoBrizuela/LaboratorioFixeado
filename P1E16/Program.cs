@@ -15,7 +15,7 @@ namespace P1E16
             // COMISION 2
             // Ejercicio 16
 
-            // DECLARAR
+            // DECLARAR OPERACIONES
             int _num1 = 0;
             int _num2 = 0;
             int _suma = 0;
@@ -25,11 +25,13 @@ namespace P1E16
             int _multiplicacion = 0;
             int _resto1 = 0;
             int _resto2 = 0;
-            bool _bandera = false;
+
+            //Declaracion while
+            string _deseaCalcular = "S";
 
             // operamos
 
-            while (_bandera == false)
+            while (_deseaCalcular.ToUpper() == "S")
             {
                 Console.Clear(); // Console Clear dentro del while
                 Console.WriteLine("Ingrese el primer numero: ");
@@ -46,61 +48,43 @@ namespace P1E16
                         Console.WriteLine($"La multiplicacion de los dos numeros ingresados es: {_multiplicacion}");
                         _resta = (_num2 - _num1);
                         Console.WriteLine($"La resta de los dos numeros ingresados, con sus operadores invertidos, es: {_resta}");
-
-
-
-                        if (_num1 != 0)
+                        try // Try catch para resolver al division en 0
+                        {
+                            _division1 = (_num1 / _num2);
+                            _resto1 = (_num1 % _num2);
+                            Console.WriteLine($"La division de ambos numeros es: {_division1}, y su resto es {_resto1}");
+                        }
+                        catch (DivideByZeroException) // En caso de que ingrese 0, muestra el mensaje de abajo.
+                        {
+                            Console.WriteLine("No se puede realizar la division en cero.");
+                        }
+                        try
                         {
                             _division2 = (_num2 / _num1);
                             _resto2 = (_num2 % _num1);
-
-                            Console.WriteLine($"La division conmutativa, es: {_division2}, y su resto es {_resto2}");
-                            if (_num2 != 0)
-                            {
-
-                                _division1 = (_num1 / _num2);
-                                _resto1 = (_num1 % _num2);
-                                Console.WriteLine($"La division de los dos numeros ingresados es: {_division1}, y su resto es {_resto1}");
-                                _bandera = true;
-                            }
-                            
-                            else
-                            {
-                                Console.WriteLine("La division no se puede realizar, ya que no se puede dividir en 0.");
-                                
-                            }
+                            Console.WriteLine($"La division conmutativa es igual a: {_division2}, y su resto es {_resto2}");
                         }
-                        else
+                      
+                        catch (DivideByZeroException)
                         {
-                            Console.WriteLine("La division conmutativa no se puede realizar, ya que no se puede dividir en 0.");
+                            Console.WriteLine("La division conmutativa no se puede realizar ya que no se puede dividir en cero.");
                         }
                     }
-
-                    Console.ReadKey();
+                    else
+                    {
+                        Console.WriteLine("Ocurrio un error. Por favor introduzca un numero.");
+                    } 
                 }
+                else
+                {
+                    Console.WriteLine("Ocurrio un error. Por favor introduzca un numero.");
+                }
+                Console.WriteLine();
+                Console.WriteLine("Desea realizar otras operaciones? [S para SI - N para NO]");
+                _deseaCalcular = Console.ReadLine();
+                Console.WriteLine("Presione cualquier tecla para finalizar...");
             }
-            
+            Console.ReadKey();
         }
     }
 }
-
-
-
-//
-//               else
-//               {
-//                   Console.WriteLine("Por favor ingrese un numero entero.\nPresione cualquier tecla para reiniciar.");
-//               }
-//           }
-//       }
-//               else
-//               {
-//                   Console.WriteLine("Por favor ingrese un numero entero.\nPresione cualquier tecla para reiniciar.");
-//               }
-//               Console.ReadKey(); // Este comando tiene que estar dentro del while/main
-//           }
-//           
-//       }
-//   }
-//
-

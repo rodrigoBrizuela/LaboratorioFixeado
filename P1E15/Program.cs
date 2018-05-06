@@ -8,6 +8,11 @@ namespace P1E15
 {
     class Program
     {
+        // Tecnicatura Superior en Programacion
+        // Comision 2
+        // Aybar Critto, Nicolas Exequiel
+        // Ejercicio 15
+
         static void Main(string[] args)
         {
             // declaro
@@ -20,7 +25,6 @@ namespace P1E15
        
             // operamos
             while (_deseaAgregar.ToUpper() == "S")
-
             {
                 Console.Clear(); // console clear va dentro del while 
                 Console.WriteLine("Por favor, ingrese el total de la venta: ");
@@ -43,16 +47,17 @@ namespace P1E15
                     }
                     else
                     {
-                        Console.WriteLine("Por favor ingrese un caracter valido.\nPresione cualquier tecla para reiniciar.");
+                        Console.WriteLine("Ocurrio un error. Por favor ingrese un caracter valido.");
                     }
                 }
                 else
                 {
-                    Console.WriteLine("Por favor ingrese un caracter valido.\nPresione cualquier tecla para reiniciar.");
+                    Console.WriteLine("Ocurrio un error. Por favor ingrese un caracter valido.");
                 }
                 Console.WriteLine();
                 Console.WriteLine("Desea realizar otra venta? [S para Si - N para NO]");
                 _deseaAgregar = Console.ReadLine();
+                Console.WriteLine("Presione cualquier tecla para finalizar...");
             }
             Console.ReadKey();
         }

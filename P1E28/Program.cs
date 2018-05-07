@@ -39,58 +39,60 @@ namespace P1E28
             decimal _montoDescuento = 0m; // declaramos el monto descuento
             decimal _porcentajeDeGalvez = 20m;
             decimal _porcentajeDeOsde = 30m;
-           
+
 
             while (_deseaRealizarOtraVenta.ToUpper() == "S") // ToUpper sirve para convertir a MAYUS el caracter ingresado.
             {
                 Console.Clear(); // Limpiar la pantalla
 
                 Console.Write("Ingrese el monto del producto: ");
-                _precioProductos = decimal.Parse(Console.ReadLine()); // Convertimos el string a decimal mediante el code decimal.Parse
-                Console.Write("Ingrese la cantidad de productos: ");
-                _cantidadProductos = int.Parse(Console.ReadLine()); // Convertimos el string a int de la cantidad de productos
-                Console.Write("Ingrese opcion de venta [1- GALVEZ , 2- OSDE, 3- SIN OBRA SOCIAL]: ");
-                _opcionDeObraSocial = int.Parse(Console.ReadLine());
-                if(_opcionDeObraSocial == 1)
+                if (decimal.TryParse(Console.ReadLine(), out _precioProductos))
                 {
-                    //GALVEZ 20%
-                    _subTotal = (_precioProductos) * (_cantidadProductos);
-                    _montoDescuento = _subTotal * (_porcentajeDeGalvez / 100);
+                    Console.Write("Ingrese la cantidad de productos: ");
+                    if (int.TryParse(Console.ReadLine(), out _cantidadProductos))
+                    {
+                        Console.Write("Ingrese opcion de venta [1- GALVEZ , 2- OSDE, 3- SIN OBRA SOCIAL]: ");
+                        if (int.TryParse(Console.ReadLine(), out _opcionDeObraSocial))
+                        {
 
-                    //totalGalvez = _totalGalvez + (_subTotal - _montoDescuento);
-                    _totalGalvez += _subTotal - _montoDescuento;
-                    _cantidadGalvez++; // aumenta la cantidad de ventas de galvez
+                            if (_opcionDeObraSocial == 1)
+                            {
+                                //GALVEZ 20%
+                                _subTotal = (_precioProductos) * (_cantidadProductos);
+                                _montoDescuento = _subTotal * (_porcentajeDeGalvez / 100);
 
-                }
-                else if (_opcionDeObraSocial == 2)
-                {
-                    //OSDE 30%
-                    _subTotal = (_precioProductos * _cantidadProductos);
-                    _montoDescuento = _subTotal * (_porcentajeDeOsde / 100);
+                                //totalGalvez = _totalGalvez + (_subTotal - _montoDescuento);
+                                _totalGalvez += _subTotal - _montoDescuento;
+                                _cantidadGalvez++; // aumenta la cantidad de ventas de galvez
 
-                    // _totalGalvez = _totalGalvez + (_subTotal - _montoDescuento);
-                    _totalOsde += _subTotal - _montoDescuento;
-                    _cantidadOsde++; // aumenta la cantidad de ventas de osde
-                }
-                else if (_opcionDeObraSocial == 3)
-                {
-                    //SIN OBRA SOCIAL 0%
-                    _subTotal = (_precioProductos * _cantidadProductos);
-                    _cantidadSinObraSocial++;
+                            }
+                            else if (_opcionDeObraSocial == 2)
+                            {
+                                //OSDE 30%
+                                _subTotal = (_precioProductos * _cantidadProductos);
+                                _montoDescuento = _subTotal * (_porcentajeDeOsde / 100);
+
+                                // _totalGalvez = _totalGalvez + (_subTotal - _montoDescuento);
+                                _totalOsde += _subTotal - _montoDescuento;
+                                _cantidadOsde++; // aumenta la cantidad de ventas de osde
+                            }
+                            else if (_opcionDeObraSocial == 3)
+                            {
+                                //SIN OBRA SOCIAL 0%
+                                _subTotal = (_precioProductos * _cantidadProductos);
+                                _cantidadSinObraSocial++;
+                            }
+                        }  
+                    }
+                    // MOSTRAR RESULTADOS
+                    Console.WriteLine($"Total Galvez: ${_totalGalvez} - Cant. Ventas: {_cantidadGalvez}");
+                    Console.WriteLine($"Total Osde: ${_totalOsde} - Cant. Ventas: {_cantidadOsde}");
+                    Console.WriteLine($"Total Galvez: ${_totalSinObraSocial} - Cant. Ventas: {_cantidadSinObraSocial}");
                 }
                 Console.WriteLine();
-                Console.WriteLine("Desea realizar otra venta ( S o N )?: ");
+                Console.WriteLine("Desea realizar otra venta? [ S para SI - N para NO]");
                 _deseaRealizarOtraVenta = Console.ReadLine();
             }
-
-
-            // MOSTRAR RESULTADOS
-            Console.WriteLine($"Total Galvez: ${_totalGalvez} - Cant. Ventas: {_cantidadGalvez}");
-            Console.WriteLine($"Total Osde: ${_totalOsde} - Cant. Ventas: {_cantidadOsde}");
-            Console.WriteLine($"Total Galvez: ${_totalSinObraSocial} - Cant. Ventas: {_cantidadSinObraSocial}");
-
-
-
             Console.ReadKey();
         }
     }

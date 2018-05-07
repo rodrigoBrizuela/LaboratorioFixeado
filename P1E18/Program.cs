@@ -40,8 +40,9 @@ namespace P1E18
                     Console.WriteLine("Por favor ingrese una cantidad en centimetros.");
                 }
                 Console.WriteLine();
-                Console.WriteLine("Desea convertir otro numero? [S para NO - N para NO]");
+                Console.WriteLine("Desea convertir otro numero? [S para SI - N para NO]");
                 _deseaIngresarNum = Console.ReadLine();
+                Console.WriteLine("Presione cualquier tecla para finalizar...");
             }
             Console.ReadKey();
         }

@@ -4,21 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace P1E25
+namespace P1E27
 {
     class Program
     {
-        public static decimal conversionCelsiusFarenheit(decimal _gradosCelsius)
-        {
-
-            decimal _resultado = 0;
-
-            _resultado = _gradosCelsius * (9m / 5m) + 32;
-
-            return _resultado;
-
-        }
-
         static void Main(string[] args)
         {
             /* Universidad Tecnologica Nacional
@@ -26,57 +15,47 @@ namespace P1E25
              * Comision 2
              * D.N.I 42.269.771
              * Adad, Fernando Yamil
-             * Ejercicio 25
+             * Ejercicio 27
              */
 
-            decimal _gradosCelsius = 0;
-            decimal _gradosFahrenheit = 0;
-            string _deporte = "";
+            decimal _ventasTotales = 0;
+            decimal _tributoMensual = 0.25m;
+            decimal _gastoMensual = 0;
+            decimal _gananciaMensual = 0;
 
             bool _verificaDatoCorrecto = false;
 
-            _verificaDatoCorrecto = false;
             while (_verificaDatoCorrecto == false)
             {
                 Console.Clear();
-                Console.Write("Segun la temperatura que ingrese, en celsius, se determinara qué deporte es el mas apropiado.\n\nTemperatura en Celsius: ");
-                if (decimal.TryParse(Console.ReadLine(), out _gradosCelsius))
+                Console.Write("Ingrese el valor total de las ventas de este mes: ");
+                if (decimal.TryParse(Console.ReadLine(), out _ventasTotales))
                 {
-                    _gradosFahrenheit = conversionCelsiusFarenheit(_gradosCelsius);
-                    if (_gradosFahrenheit > 85)
-                    {
-                        _deporte = "Natacion";
-                    }
-                    else if (_gradosFahrenheit > 70 && _gradosFahrenheit <= 85)
-                    {
-                        _deporte = "Tenis";
-                    }
-                    else if (_gradosFahrenheit > 35 && _gradosFahrenheit <= 70)
-                    {
-                        _deporte = "Golf";
-                    }
-                    else if (_gradosFahrenheit > 32 && _gradosFahrenheit <= 35)
-                    {
-                        _deporte = "Esqui";
-                    }
-                    else
-                    {
-                        _deporte = "otro no especificado";
-                    }
+                    //Operaciones
 
-                    Console.Write($"Temperatura en Fahrenheit: {_gradosFahrenheit}");
-                    Console.Write($"\n\nEl deporte más apropiado es {_deporte}");
+                    _gastoMensual = _tributoMensual * _ventasTotales;
+                    _gananciaMensual = _ventasTotales - _gastoMensual;
+
+                    _verificaDatoCorrecto = true;
 
                 }
                 else
                 {
-                    Console.Write("Ingresó un valor incorrecto, presione cualquier tecla para reiniciar.");
+                    Console.Write("Ingresó un valor incorrecto, presione cualquier tecla para reinciar.");
+                    Console.ReadKey();
                 }
+            } // fin while
 
-                Console.ReadKey();
-            }
+            // Muestra de datos
 
+            Console.Clear();
 
-        }
+            Console.Write($"Total de ventas:\t${_ventasTotales}\n\n" +
+                $"Impuesto mensual:\t${_gastoMensual}\n" +
+                $"Ganancia mensual:\t${_gananciaMensual}");
+
+            Console.ReadKey();
+
+        } // fin main
     }
-}
+}  

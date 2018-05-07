@@ -36,13 +36,11 @@ namespace P1E27
                         _totalVentas = (_ventas - _ventas * _impuesto / 100);
                         _ganancia = _totalVentas - _gastos;
                         Console.WriteLine($"La ganancia del comerciante con deduccion de impuestos y de gastos es de ${_ganancia}");
-
                     }
                     else
                     {
                         Console.WriteLine("Ocurrio un eror al ingresar los gastos. Por favor intente nuevamente.");
                     }
-
                 }
                 else
                 {

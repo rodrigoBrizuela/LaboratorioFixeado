@@ -53,14 +53,14 @@ namespace P1E22
                 _nombre = Console.ReadLine();
 
                 Console.WriteLine("Ingrese el sueldo del trabajador: ");
-                if (decimal.TryParse(Console.ReadLine(), out _sueldo))
+                if (decimal.TryParse(Console.ReadLine(), out _sueldo) && _sueldo > 0)
                 {
                     Console.WriteLine("Ingrese el tipo de trabajador [ 1- V | 2- G | 3- E | 4- O]");
                     {
                         if (int.TryParse(Console.ReadLine(), out _trabajador))
                         {
                             Console.WriteLine("Ingrese la cantidad de hijos que tiene el trabajador: ");
-                            if (int.TryParse(Console.ReadLine(), out _hijos))
+                            if (int.TryParse(Console.ReadLine(), out _hijos) && _hijos > 0)
                             {
                                 if (_trabajador == 1) // TIPO V
                                 {

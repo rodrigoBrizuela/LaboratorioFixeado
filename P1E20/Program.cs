@@ -40,10 +40,10 @@ namespace P1E20
             {
                 Console.Clear();
                 Console.WriteLine("Ingrese el sueldo del trabajador: ");
-                if (decimal.TryParse(Console.ReadLine(), out _sueldo))
+                if (decimal.TryParse(Console.ReadLine(), out _sueldo) && _sueldo > 0)
                 {
                     Console.WriteLine("Ingrese la cantidad de horas extras trabajadas: ");
-                    if (decimal.TryParse(Console.ReadLine(), out _horas))
+                    if (decimal.TryParse(Console.ReadLine(), out _horas) && _horas > 0)
                     {
                         Console.WriteLine("Ingrese el tipo de trabajador [ 1 - Categoria 1 | 2- Categoria 2 ]");
                         if (int.TryParse(Console.ReadLine(), out _tipoEmpleado))
